@@ -29,7 +29,7 @@ namespace Testing1
         }
 
         [TestMethod]
-        public void IDPropertyOK()
+        public void ScreenIDPropertyOK()
         {
             //create an instance of the class we want to create
             clsScreen Screen = new clsScreen();
@@ -42,7 +42,7 @@ namespace Testing1
         }
 
         [TestMethod]
-        public void NamePropertyOK()
+        public void ScreenNamePropertyOK()
         {
             //create an instance of the class we want to create
             clsScreen Screen = new clsScreen();
@@ -66,26 +66,29 @@ namespace Testing1
             //test to see that the two values are the same
             Assert.AreEqual(Screen.ScreenCapacity, TestData);
         }
-
         [TestMethod]
-        public void ScreenListSelectOK()
+        public void ScreenBeingUsedOK()
         {
-            // Create the screen management list
-            clsScreenManagement ScreenList = new clsScreenManagement();
-
-            // Create some test data
-            clsScreen TestScreen = new clsScreen();
-
-            //create some test data to assign to the property
-            TestScreen.ScreenID = 5;
-            TestScreen.ScreenCapacity = 50;
-            TestScreen.ScreenName = "Test Name";
-
-            ScreenList.SelectedScreen = TestScreen;
-
+            //create an instance of the class we want to create
+            clsScreen AnScreen = new clsScreen();
+            //create some test data to the property
+            Boolean TestData = true;
+            //assign the data to the property
+            AnScreen.ScreenBeingUsed = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(ScreenList.SelectedScreen, TestScreen);
+            Assert.AreEqual(AnScreen.ScreenBeingUsed, TestData);
         }
-
-    }
+        [TestMethod]
+        public void AdsBeforeMoviePropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsScreen Screen = new clsScreen();
+            //create some test data to assign to the property
+            int TestData = 5;
+            //assign the data to the property
+            Screen.AdsAfterMovie = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(Screen.AdsAfterMovie, TestData);
+        }
+        }
 }
