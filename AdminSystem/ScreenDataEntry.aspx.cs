@@ -20,7 +20,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         //capture the screen name
         AnScreen.ScreenName = txtScreenName.Text;
         AnScreen.Capacity = Convert.ToInt32(txtCapacity.Text);
-        AnScreen.AdsAfterMovie = Convert.ToInt32(txtAdsBeforeMovie.Text);
+        AnScreen.AdsBeforeMovie = Convert.ToInt32(txtAdsBeforeMovie.Text);
         //store the address in the session object
         Session["AnScreen"] = AnScreen;
         //navigate to the viewer page

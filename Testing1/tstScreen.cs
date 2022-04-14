@@ -86,9 +86,129 @@ namespace Testing1
             //create some test data to assign to the property
             int TestData = 5;
             //assign the data to the property
-            Screen.AdsAfterMovie = TestData;
+            Screen.AdsBeforeMovie = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(Screen.AdsAfterMovie, TestData);
+            Assert.AreEqual(Screen.AdsBeforeMovie, TestData);
         }
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsScreen AnScreen = new clsScreen();
+            //Boolean variable to store the resuls of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 ScreenID = 21;
+            //invoke the method
+            Found = AnScreen.Find(ScreenID);
+            //test to see if the results are true
+            Assert.IsTrue(Found);
         }
+        [TestMethod]
+        public void TestScreenIDNoFound()
+        {
+            //create an instance of the class we want to create
+            clsScreen AnScreen = new clsScreen();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ScreenID = 21;
+            //invoke the method
+            Found = AnScreen.Find(ScreenID);
+            //check the address no
+            if (AnScreen.ScreenID != 21)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestScreenNameFound()
+        {
+            //create an instance of the class we want to create
+            clsScreen AnScreen = new clsScreen();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ScreenID = 21;
+            //invoke the method
+            Found = AnScreen.Find(ScreenID);
+            //check the address no
+            if (AnScreen.ScreenName != "IMAX1")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+
+        }
+        [TestMethod]
+        public void TestCapacityNoFound()
+        {
+            //create an instance of the class we want to create
+            clsScreen AnScreen = new clsScreen();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ScreenID = 21;
+            //invoke the method
+            Found = AnScreen.Find(ScreenID);
+            //check the address no
+            if (AnScreen.Capacity != 20)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestScreenBeingUsedNoFound()
+        {
+            //create an instance of the class we want to create
+            clsScreen AnScreen = new clsScreen();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ScreenID = 21;
+            //invoke the method
+            Found = AnScreen.Find(ScreenID);
+            //check the address no
+            if (AnScreen.ScreenBeingUsed != true)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestAdsBeforeMovieNoFound()
+        {
+            //create an instance of the class we want to create
+            clsScreen AnScreen = new clsScreen();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ScreenID = 21;
+            //invoke the method
+            Found = AnScreen.Find(ScreenID);
+            //check the address no
+            if (AnScreen.AdsBeforeMovie != 15)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+    }
 }
