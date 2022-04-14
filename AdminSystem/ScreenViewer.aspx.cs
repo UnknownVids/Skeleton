@@ -17,7 +17,7 @@ public partial class _1Viewer : System.Web.UI.Page
         //display the screen name foe this entry
         Response.Write(AnScreen.ScreenName + "<br />"); 
         Response.Write(AnScreen.Capacity + "<br />");
-        Response.Write(AnScreen.AdsAfterMovie + "<br />");
+        Response.Write(AnScreen.AdsBeforeMovie + "<br />");
 
     }
 }
