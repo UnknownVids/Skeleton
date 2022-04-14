@@ -62,9 +62,9 @@ namespace Testing1
             //create some test data to assign to the property
             int TestData = 55;
             //assign the data to the property
-            Screen.ScreenCapacity = TestData;
+            Screen.Capacity = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(Screen.ScreenCapacity, TestData);
+            Assert.AreEqual(Screen.Capacity, TestData);
         }
         [TestMethod]
         public void ScreenBeingUsedOK()
