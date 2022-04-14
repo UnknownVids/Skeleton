@@ -14,7 +14,7 @@ namespace ClassLibrary
     {
         public int ScreenID { get; set; }
         public string ScreenName { get; set; }
-        public int ScreenCapacity { get; set; }
+        public int Capacity { get; set; }
         public bool ScreenBeingUsed { get; set; }
         public int AdsAfterMovie { get; set; }
     }
