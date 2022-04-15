@@ -34,7 +34,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsScreen Screen = new clsScreen();
             //create some test data to assign to the property
-            int TestData = 5;
+            int TestData = 1;
             //assign the data to the property
             Screen.ScreenID = TestData;
             //test to see that the two values are the same
@@ -47,7 +47,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsScreen Screen = new clsScreen();
             //create some test data to assign to the property
-            string TestData = "Test Name";
+            string TestData = "IMAX 1";
             //assign the data to the property
             Screen.ScreenName = TestData;
             //test to see that the two values are the same
@@ -60,7 +60,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsScreen Screen = new clsScreen();
             //create some test data to assign to the property
-            int TestData = 55;
+            int TestData = 100;
             //assign the data to the property
             Screen.Capacity = TestData;
             //test to see that the two values are the same
@@ -84,7 +84,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsScreen Screen = new clsScreen();
             //create some test data to assign to the property
-            int TestData = 5;
+            int TestData = 15;
             //assign the data to the property
             Screen.AdsBeforeMovie = TestData;
             //test to see that the two values are the same
@@ -98,14 +98,14 @@ namespace Testing1
             //Boolean variable to store the resuls of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 ScreenID = 21;
+            Int32 ScreenID = 1;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //test to see if the results are true
             Assert.IsTrue(Found);
         }
         [TestMethod]
-        public void TestScreenIDNoFound()
+        public void TestScreenIDFound()
         {
             //create an instance of the class we want to create
             clsScreen AnScreen = new clsScreen();
@@ -114,11 +114,11 @@ namespace Testing1
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ScreenID = 21;
+            Int32 ScreenID = 1;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the address no
-            if (AnScreen.ScreenID != 21)
+            if (AnScreen.ScreenID != 1)
             {
                 OK = false;
             }
@@ -135,11 +135,11 @@ namespace Testing1
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ScreenID = 21;
+            Int32 ScreenID = 1;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
-            //check the address no
-            if (AnScreen.ScreenName != "IMAX1")
+            //check the screen name
+            if (AnScreen.ScreenName != "IMAX 1")
             {
                 OK = false;
             }
@@ -148,7 +148,7 @@ namespace Testing1
 
         }
         [TestMethod]
-        public void TestCapacityNoFound()
+        public void TestCapacityFound()
         {
             //create an instance of the class we want to create
             clsScreen AnScreen = new clsScreen();
@@ -157,11 +157,11 @@ namespace Testing1
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ScreenID = 21;
+            Int32 ScreenID = 1;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the address no
-            if (AnScreen.Capacity != 20)
+            if (AnScreen.Capacity != 100)
             {
                 OK = false;
             }
@@ -169,7 +169,7 @@ namespace Testing1
             Assert.IsTrue(OK);
         }
         [TestMethod]
-        public void TestScreenBeingUsedNoFound()
+        public void TestScreenBeingUsedFound()
         {
             //create an instance of the class we want to create
             clsScreen AnScreen = new clsScreen();
@@ -178,7 +178,7 @@ namespace Testing1
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ScreenID = 21;
+            Int32 ScreenID = 1;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the address no
@@ -190,7 +190,7 @@ namespace Testing1
             Assert.IsTrue(OK);
         }
         [TestMethod]
-        public void TestAdsBeforeMovieNoFound()
+        public void TestAdsBeforeMovieFound()
         {
             //create an instance of the class we want to create
             clsScreen AnScreen = new clsScreen();
@@ -199,11 +199,11 @@ namespace Testing1
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ScreenID = 21;
+            Int32 ScreenID = 1;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the address no
-            if (AnScreen.AdsBeforeMovie != 15)
+            if (AnScreen.AdsBeforeMovie != 5)
             {
                 OK = false;
             }
