@@ -12,6 +12,7 @@
         </div>
         <asp:Label ID="ScreenID" runat="server" Text="Screen ID" width="116px"></asp:Label>
         <asp:TextBox ID="txtScreenID" runat="server" OnTextChanged="txtScreenID_TextChanged"></asp:TextBox>
+        <asp:Button ID="btnFind" runat="server" OnClick="Button1_Click" Text="Find" />
         <p>
             <asp:Label ID="ScreenName" runat="server" Text="Screen Name" width="116px"></asp:Label>
             <asp:TextBox ID="txtScreenName" runat="server"></asp:TextBox>
