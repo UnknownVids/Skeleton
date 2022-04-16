@@ -14,9 +14,9 @@ namespace ClassLibrary
     public class clsScreen
     {
         //private data member for ads before movie
-        private Int32 mAdsBeforeMovie;
+        private string mAdsBeforeMovie;
         //public property for ads before movie
-        public int AdsBeforeMovie
+        public string AdsBeforeMovie
         {
             get
             {
@@ -47,9 +47,9 @@ namespace ClassLibrary
             }
         }
         //private data member for capacity
-        private Int32 mCapacity;
+        private string mCapacity;
         //public property for capacity
-        public int Capacity
+        public string Capacity
         {
             get
 
@@ -123,8 +123,8 @@ namespace ClassLibrary
                 mScreenID = Convert.ToInt32(DB.DataTable.Rows[0]["ScreenID"]);
                 mScreenName = Convert.ToString(DB.DataTable.Rows[0]["ScreenName"]);
                 mScreenBeingUsed = Convert.ToBoolean(DB.DataTable.Rows[0]["ScreenBeingUsed"]);
-                mCapacity = Convert.ToInt32(DB.DataTable.Rows[0]["Capacity"]);
-                mAdsBeforeMovie = Convert.ToInt32(DB.DataTable.Rows[0]["AdsBeforeMovie"]);
+                mCapacity = Convert.ToString(DB.DataTable.Rows[0]["Capacity"]);
+                mAdsBeforeMovie = Convert.ToString(DB.DataTable.Rows[0]["AdsBeforeMovie"]);
                 mDateBooked = Convert.ToDateTime(DB.DataTable.Rows[0]["DateBooked"]);
                 //always return true
                 return true;

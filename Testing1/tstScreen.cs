@@ -66,7 +66,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsScreen Screen = new clsScreen();
             //create some test data to assign to the property
-            int TestData = 100;
+            string TestData = "100";
             //assign the data to the property
             Screen.Capacity = TestData;
             //test to see that the two values are the same
@@ -90,7 +90,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsScreen Screen = new clsScreen();
             //create some test data to assign to the property
-            int TestData = 15;
+            string TestData = "15";
             //assign the data to the property
             Screen.AdsBeforeMovie = TestData;
             //test to see that the two values are the same
@@ -179,7 +179,7 @@ namespace Testing1
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the address no
-            if (AnScreen.Capacity != 100)
+            if (AnScreen.Capacity != "100")
             {
                 OK = false;
             }
@@ -221,7 +221,7 @@ namespace Testing1
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the address no
-            if (AnScreen.AdsBeforeMovie != 5)
+            if (AnScreen.AdsBeforeMovie != "5")
             {
                 OK = false;
             }
