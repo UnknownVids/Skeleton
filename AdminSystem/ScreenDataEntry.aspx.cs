@@ -21,6 +21,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         AnScreen.ScreenName = txtScreenName.Text;
         AnScreen.Capacity = Convert.ToInt32(txtCapacity.Text);
         AnScreen.AdsBeforeMovie = Convert.ToInt32(txtAdsBeforeMovie.Text);
+        AnScreen.DateBooked = Convert.ToDateTime(txtDateBooked.Text);
         //store the address in the session object
         Session["AnScreen"] = AnScreen;
         //navigate to the viewer page
@@ -56,6 +57,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
             txtScreenName.Text = AnScreen.ScreenName;
             txtCapacity.Text = AnScreen.Capacity.ToString();
             txtAdsBeforeMovie.Text = AnScreen.AdsBeforeMovie.ToString();
+            txtDateBooked.Text = AnScreen.DateBooked.ToString();
          
         }
     }

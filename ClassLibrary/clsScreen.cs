@@ -95,6 +95,20 @@ namespace ClassLibrary
                 mScreenID = value;
             }
         }
+        //datebooked private member variable
+        private DateTime mDateBooked;
+        public DateTime DateBooked
+        {
+            get
+            {
+                return mDateBooked;
+            }
+            set
+            {
+                mDateBooked = value;
+            }
+        }
+
         public bool Find(int ScreenID)
         {
             //create an instance of the data connection
@@ -111,6 +125,7 @@ namespace ClassLibrary
                 mScreenBeingUsed = Convert.ToBoolean(DB.DataTable.Rows[0]["ScreenBeingUsed"]);
                 mCapacity = Convert.ToInt32(DB.DataTable.Rows[0]["Capacity"]);
                 mAdsBeforeMovie = Convert.ToInt32(DB.DataTable.Rows[0]["AdsBeforeMovie"]);
+                mDateBooked = Convert.ToDateTime(DB.DataTable.Rows[0]["DateBooked"]);
                 //always return true
                 return true;
             }
