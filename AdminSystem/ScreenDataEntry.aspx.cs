@@ -18,20 +18,32 @@ public partial class _1_DataEntry : System.Web.UI.Page
         //create a new instance of clsScreen
         clsScreen AnScreen = new clsScreen();
         //capture the screen name
-        AnScreen.ScreenName = txtScreenName.Text;
-        AnScreen.Capacity = Convert.ToInt32(txtCapacity.Text);
-        AnScreen.AdsBeforeMovie = Convert.ToInt32(txtAdsBeforeMovie.Text);
-        AnScreen.DateBooked = Convert.ToDateTime(txtDateBooked.Text);
-        //store the address in the session object
-        Session["AnScreen"] = AnScreen;
-        //navigate to the viewer page
-        Response.Redirect("ScreenViewer.aspx");
-
+        string screenName = txtScreenName.Text;
+        string capacity = txtCapacity.Text;
+        string adsBeforeMovie = txtAdsBeforeMovie.Text;
+        string dateBooked = txtDateBooked.Text;
+        //variable to store any error messages
+        string Error = "";
+        //validate the data
+        Error = AnScreen.Valid(screenName, capacity, adsBeforeMovie, dateBooked);
+        if (Error == "")
+        {
+            AnScreen.ScreenName = screenName;
+            AnScreen.Capacity = capacity;
+            AnScreen.AdsBeforeMovie = adsBeforeMovie;
+            AnScreen.DateBooked = Convert.ToDateTime(dateBooked);
+            //store the address in the session object
+            Session["AnScreen"] = AnScreen;
+            //navigate to the viewer page
+            Response.Redirect("ScreenViewer.aspx");
+        }
+        else
+        {
+            //display the error message
+            lblError.Text = Error;
+        }
 
     }
-
-
-
     protected void txtScreenID_TextChanged(object sender, EventArgs e)
     {
 
