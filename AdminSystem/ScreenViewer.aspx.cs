@@ -18,6 +18,7 @@ public partial class _1Viewer : System.Web.UI.Page
         Response.Write(AnScreen.ScreenName + "<br />"); 
         Response.Write(AnScreen.Capacity + "<br />");
         Response.Write(AnScreen.AdsBeforeMovie + "<br />");
+        Response.Write(AnScreen.DateBooked + "<br /?");
 
     }
 }

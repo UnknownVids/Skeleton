@@ -70,13 +70,13 @@ namespace Testing1
         public void ScreenBeingUsedOK()
         {
             //create an instance of the class we want to create
-            clsScreen AnScreen = new clsScreen();
+            clsScreen Screen = new clsScreen();
             //create some test data to the property
             Boolean TestData = true;
             //assign the data to the property
-            AnScreen.ScreenBeingUsed = TestData;
+            Screen.ScreenBeingUsed = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(AnScreen.ScreenBeingUsed, TestData);
+            Assert.AreEqual(Screen.ScreenBeingUsed, TestData);
         }
         [TestMethod]
         public void AdsBeforeMoviePropertyOK()
@@ -89,6 +89,18 @@ namespace Testing1
             Screen.AdsBeforeMovie = TestData;
             //test to see that the two values are the same
             Assert.AreEqual(Screen.AdsBeforeMovie, TestData);
+        }
+        [TestMethod]
+        public void DateBookedOK()
+        {
+            //create an instance of the class we want to create
+            clsScreen Screen = new clsScreen();
+            //create some test data to assign to the property
+            DateTime TestData = DateTime.Now.Date;
+            //asign the data to the property
+            Screen.DateBooked = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(Screen.DateBooked, TestData);
         }
         [TestMethod]
         public void FindMethodOK()
@@ -210,5 +222,27 @@ namespace Testing1
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
+        [TestMethod]
+        public void TestDateBooked()
+        {
+            //create an instance of the class we want to create
+            clsScreen AnScreen = new clsScreen();
+            //boolean variable to store the results of the search
+            Boolean Found = false;
+            //boolean variable to record if the data is ok(assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ScreenID = 1;
+            //invoke the method
+            Found = AnScreen.Find(ScreenID);
+            //check the data booked
+            if (AnScreen.DateBooked != Convert.ToDateTime("06/02/2021"))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
     }
 }
+
