@@ -116,7 +116,7 @@ namespace Testing1
             //Boolean variable to store the resuls of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 ScreenID = 1;
+            Int32 ScreenID = 2;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //test to see if the results are true
@@ -132,11 +132,11 @@ namespace Testing1
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ScreenID = 1;
+            Int32 ScreenID = 2;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the address no
-            if (AnScreen.ScreenID != 1)
+            if (AnScreen.ScreenID != 2)
             {
                 OK = false;
             }
@@ -153,7 +153,7 @@ namespace Testing1
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ScreenID = 1;
+            Int32 ScreenID = 2;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the screen name
@@ -175,7 +175,7 @@ namespace Testing1
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ScreenID = 1;
+            Int32 ScreenID = 2;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the address no
@@ -196,7 +196,7 @@ namespace Testing1
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ScreenID = 1;
+            Int32 ScreenID = 2;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the address no
@@ -217,11 +217,11 @@ namespace Testing1
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ScreenID = 1;
+            Int32 ScreenID = 2;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the address no
-            if (AnScreen.AdsBeforeMovie != "5")
+            if (AnScreen.AdsBeforeMovie != "15")
             {
                 OK = false;
             }
@@ -238,11 +238,11 @@ namespace Testing1
             //boolean variable to record if the data is ok(assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ScreenID = 1;
+            Int32 ScreenID = 2;
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the data booked
-            if (AnScreen.DateBooked != Convert.ToDateTime("06/02/2021"))
+            if (AnScreen.DateBooked != Convert.ToDateTime("07/02/2021"))
             {
                 OK = false;
             }

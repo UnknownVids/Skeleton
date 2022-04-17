@@ -8,9 +8,35 @@ using ClassLibrary;
 
 public partial class _1_DataEntry : System.Web.UI.Page
 {
+    //variable to store the primary key with page level scope
+    Int32 ScreenID;
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //get the number of the screens to be processed
+        ScreenID = Convert.ToInt32(Session["ScreenID"]);
+        if (IsPostBack == false)
+        {
+            //if this is not a new record
+            if (ScreenID != -1)
+            {
+                //display the current data for the record
+                DisplayScreens();
+            }
+        }
+    }
+    void DisplayScreens()
+    {
+        //create an instance of the Screen
+        clsScreenCollection Screens = new clsScreenCollection();
+        //find the record to update
+        Screens.ThisScreen.Find(ScreenID);
+        //display the data for this record
+        txtScreenID.Text = Screens.ThisScreen.ScreenID.ToString();
+        txtScreenName.Text = Screens.ThisScreen.ScreenName;
+        txtCapacity.Text = Screens.ThisScreen.Capacity;
+        txtAdsBeforeMovie.Text = Screens.ThisScreen.AdsBeforeMovie;
+        txtDateBooked.Text = Screens.ThisScreen.DateBooked.ToString();
+        chkScreenBeingUsed.Checked = Screens.ThisScreen.ScreenBeingUsed;
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
@@ -28,14 +54,35 @@ public partial class _1_DataEntry : System.Web.UI.Page
         Error = AnScreen.Valid(screenName, capacity, adsBeforeMovie, dateBooked);
         if (Error == "")
         {
+            AnScreen.ScreenID = ScreenID;
             AnScreen.ScreenName = screenName;
             AnScreen.Capacity = capacity;
             AnScreen.AdsBeforeMovie = adsBeforeMovie;
             AnScreen.DateBooked = Convert.ToDateTime(dateBooked);
-            //store the address in the session object
-            Session["AnScreen"] = AnScreen;
+            AnScreen.ScreenBeingUsed = chkScreenBeingUsed.Checked;
+            //create a new instance of the screen collection
+            clsScreenCollection ScreenList = new clsScreenCollection();
+            
+            //if this is a new record i.e. ScreenID = -1 then add the data
+            if(ScreenID == -1)
+            {
+                //set the ThisScreen property
+                ScreenList.ThisScreen = AnScreen;
+                //add the new record
+                ScreenList.Add();
+            }
+            //otherwise it must be an update
+            else
+            {
+                //find the record to update
+                ScreenList.ThisScreen.Find(ScreenID);
+                //set the ThisScreen property
+                ScreenList.ThisScreen = AnScreen;
+                //update the record
+                ScreenList.Update();
+            }
             //navigate to the viewer page
-            Response.Redirect("ScreenViewer.aspx");
+            Response.Redirect("ScreenList.aspx");
         }
         else
         {
