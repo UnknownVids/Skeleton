@@ -34,7 +34,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         txtScreenID.Text = Screens.ThisScreen.ScreenID.ToString();
         txtScreenName.Text = Screens.ThisScreen.ScreenName;
         txtCapacity.Text = Screens.ThisScreen.Capacity;
-        txtAdsBeforeMovie.Text = Screens.ThisScreen.AdsBeforeMovie;
+        txtAdsBeforeMovie.Text = Screens.ThisScreen.AdsBeforeMovie.ToString();
         txtDateBooked.Text = Screens.ThisScreen.DateBooked.ToString();
         chkScreenBeingUsed.Checked = Screens.ThisScreen.ScreenBeingUsed;
     }
@@ -46,7 +46,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         //capture the screen name
         string screenName = txtScreenName.Text;
         string capacity = txtCapacity.Text;
-        string adsBeforeMovie = txtAdsBeforeMovie.Text;
+        Int32 adsBeforeMovie = Convert.ToInt32(txtAdsBeforeMovie.Text);
         string dateBooked = txtDateBooked.Text;
         //variable to store any error messages
         string Error = "";

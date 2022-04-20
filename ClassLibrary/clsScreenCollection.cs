@@ -131,7 +131,7 @@ namespace ClassLibrary
                 AnScreen.ScreenName = Convert.ToString(DB.DataTable.Rows[Index]["ScreenName"]);
                 AnScreen.ScreenBeingUsed = Convert.ToBoolean(DB.DataTable.Rows[Index]["ScreenBeingUsed"]);
                 AnScreen.Capacity = Convert.ToString(DB.DataTable.Rows[Index]["Capacity"]);
-                AnScreen.AdsBeforeMovie = Convert.ToString(DB.DataTable.Rows[Index]["AdsBeforeMovie"]);
+                AnScreen.AdsBeforeMovie = Convert.ToInt32(DB.DataTable.Rows[Index]["AdsBeforeMovie"]);
                 AnScreen.DateBooked = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateBooked"]);
                 mScreenList.Add(AnScreen);
                 Index++;

@@ -28,7 +28,7 @@ namespace Testing1
             //create the item of test data
             clsScreen TestItem = new clsScreen();
             //set its properties
-            TestItem.AdsBeforeMovie = "15";
+            TestItem.AdsBeforeMovie = 15;
             TestItem.Capacity = "100";
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.ScreenBeingUsed = true;
@@ -49,7 +49,7 @@ namespace Testing1
             //create some test data to assign to the property
             clsScreen TestScreen = new clsScreen();
             //set the properties of the test object
-            TestScreen.AdsBeforeMovie = "15";
+            TestScreen.AdsBeforeMovie = 15;
             TestScreen.Capacity = "100";
             TestScreen.DateBooked = DateTime.Now.Date;
             TestScreen.ScreenBeingUsed = true;
@@ -72,7 +72,7 @@ namespace Testing1
             //create the item of test data
             clsScreen TestItem = new clsScreen();
             //set its properties
-            TestItem.AdsBeforeMovie = "15";
+            TestItem.AdsBeforeMovie = 15;
             TestItem.Capacity = "100";
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.ScreenBeingUsed = true;
@@ -95,7 +95,7 @@ namespace Testing1
             //var to store the primary key
             Int32 PrimaryKey = 1;
             //set its properties
-            TestItem.AdsBeforeMovie = "17";
+            TestItem.AdsBeforeMovie = 17;
             TestItem.Capacity = "135";
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.ScreenBeingUsed = true;
@@ -121,7 +121,7 @@ namespace Testing1
             //var to store the primary key
             Int32 PrimaryKey = 0;
             //set its properties
-            TestItem.AdsBeforeMovie = "15";
+            TestItem.AdsBeforeMovie = 15;
             TestItem.Capacity = "100";
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.ScreenBeingUsed = true;
@@ -133,7 +133,7 @@ namespace Testing1
             //set the primary key of the test data
             TestItem.ScreenID = PrimaryKey;
             //modify the test data
-            TestItem.AdsBeforeMovie = "20";
+            TestItem.AdsBeforeMovie = 20;
             TestItem.Capacity = "127";
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.ScreenBeingUsed = false;
@@ -157,7 +157,7 @@ namespace Testing1
             //var to store the primary key
             Int32 PrimaryKey = 1;
             //set its properties
-            TestItem.AdsBeforeMovie = "17";
+            TestItem.AdsBeforeMovie = 17;
             TestItem.Capacity = "135";
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.ScreenBeingUsed = true;
