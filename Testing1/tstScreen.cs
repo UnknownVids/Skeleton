@@ -14,7 +14,7 @@ namespace Testing1
         //create some test data to pass the method
         string screenName = "IMAX 1";
         string capacity = "100";
-        string adsBeforeMovie = "15";
+        Int32 adsBeforeMovie = 15;
         string dateBooked = DateTime.Now.Date.ToString();
         public ScreenTest()
         {
@@ -90,7 +90,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsScreen Screen = new clsScreen();
             //create some test data to assign to the property
-            string TestData = "15";
+            Int32 TestData = 15;
             //assign the data to the property
             Screen.AdsBeforeMovie = TestData;
             //test to see that the two values are the same
@@ -221,7 +221,7 @@ namespace Testing1
             //invoke the method
             Found = AnScreen.Find(ScreenID);
             //check the address no
-            if (AnScreen.AdsBeforeMovie != "15")
+            if (AnScreen.AdsBeforeMovie != 15)
             {
                 OK = false;
             }
@@ -490,14 +490,14 @@ namespace Testing1
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        public void adsBeforemMovirMinLessOne()
+        public void adsBeforeMovieMinLessOne()
         {
             //create an instance of the class we want to create
             clsScreen AnScreen = new clsScreen();
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string adsBeforeMovie = ""; //this should trigger an error
+            Int32 adsBeforeMovie = 0; //this should trigger an error
             //invoke the method
             Error = AnScreen.Valid(screenName, capacity, adsBeforeMovie, dateBooked);
             //test to see that the result is correct
@@ -511,7 +511,7 @@ namespace Testing1
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string adsBeforeMovie = "a"; //this should be ok
+            Int32 adsBeforeMovie = 1; //this should be ok
             //invoke the method
             Error = AnScreen.Valid(screenName, capacity, adsBeforeMovie, dateBooked);
             //test to see that the result is correct
@@ -525,7 +525,7 @@ namespace Testing1
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string adsBeforeMovie = "aa"; //this should be ok
+            Int32 adsBeforeMovie = 2; //this should be ok
             //invoke the method
             Error = AnScreen.Valid(screenName, capacity, adsBeforeMovie, dateBooked);
             //test to see that the result is correct
@@ -539,7 +539,7 @@ namespace Testing1
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string adsBeforeMovie = "aaa"; //this should be ok
+            Int32 adsBeforeMovie = 24; //this should be ok
             //invoke the method
             Error = AnScreen.Valid(screenName, capacity, adsBeforeMovie, dateBooked);
             //test to see that the result is correct
@@ -553,7 +553,7 @@ namespace Testing1
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string adsBeforeMovie = "aaaa"; //this should be ok
+            Int32 adsBeforeMovie = 25; //this should be ok
             //invoke the method
             Error = AnScreen.Valid(screenName, capacity, adsBeforeMovie, dateBooked);
             //test to see that the result is correct
@@ -567,8 +567,7 @@ namespace Testing1
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string adsBeforeMovie = "";
-            adsBeforeMovie = adsBeforeMovie.PadRight(51, 'a'); //this should fail
+            Int32 adsBeforeMovie = 26; //this should fail
             //invoke the method
             Error = AnScreen.Valid(screenName, capacity, adsBeforeMovie, dateBooked);
             //test to see that the result is correct
@@ -582,7 +581,7 @@ namespace Testing1
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string adsBeforeMovie = "aaaaa"; //this should be ok
+            Int32 adsBeforeMovie = 15; //this should be ok
             //invoke the method
             Error = AnScreen.Valid(screenName, capacity, adsBeforeMovie, dateBooked);
             //test to see that the result is correct
@@ -596,8 +595,7 @@ namespace Testing1
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string adsBeforeMovie = "";
-            adsBeforeMovie = adsBeforeMovie.PadRight(100, 'a'); //this should fail
+            Int32 adsBeforeMovie = 50; //this should fail
             //invoke the method
             Error = AnScreen.Valid(screenName, capacity, adsBeforeMovie, dateBooked);
             //test to see that the result is correct

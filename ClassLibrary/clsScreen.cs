@@ -14,9 +14,9 @@ namespace ClassLibrary
     public class clsScreen
     {
         //private data member for ads before movie
-        private string mAdsBeforeMovie;
+        private Int32 mAdsBeforeMovie;
         //public property for ads before movie
-        public string AdsBeforeMovie
+        public Int32 AdsBeforeMovie
         {
             get
             {
@@ -124,7 +124,7 @@ namespace ClassLibrary
                 mScreenName = Convert.ToString(DB.DataTable.Rows[0]["ScreenName"]);
                 mScreenBeingUsed = Convert.ToBoolean(DB.DataTable.Rows[0]["ScreenBeingUsed"]);
                 mCapacity = Convert.ToString(DB.DataTable.Rows[0]["Capacity"]);
-                mAdsBeforeMovie = Convert.ToString(DB.DataTable.Rows[0]["AdsBeforeMovie"]);
+                mAdsBeforeMovie = Convert.ToInt32(DB.DataTable.Rows[0]["AdsBeforeMovie"]);
                 mDateBooked = Convert.ToDateTime(DB.DataTable.Rows[0]["DateBooked"]);
                 //always return true
                 return true;
@@ -137,7 +137,7 @@ namespace ClassLibrary
             }
         }
         //function for the public validation method
-        public string Valid(string screenName, string capacity, string adsBeforeMovie, string dateBooked)
+        public string Valid(string screenName, string capacity, Int32 adsBeforeMovie, string dateBooked)
         {
             //create a string variable to store the error
             String Error = "";
@@ -154,19 +154,19 @@ namespace ClassLibrary
             }
             if (capacity.Length == 0)
             {
-                Error = Error + "The capacity may not be blank :";
+                Error = Error + "The Capacity may not be blank :";
             }
             if (capacity.Length > 300)
             {
-                Error = Error + "The capacity must be less than 300 characters :";
+                Error = Error + "The Capacity must be less than 300 characters :";
             }
-            if (adsBeforeMovie.Length == 0)
+            if (adsBeforeMovie == 0)
             {
-                Error = Error + "The capacity may not be blank :";
+                Error = Error + "The AdsBeforeMovie may not be blank :";
             }
-            if (adsBeforeMovie.Length > 50)
+            if (adsBeforeMovie > 25)
             {
-                Error = Error + "The capacity must be less than 300 characters :";
+                Error = Error + "The AdsBeforeMovie must be less than 25 characters :";
             }
         try
             {   //copy the dataBooked value to the DateTEMP VARIABLE
